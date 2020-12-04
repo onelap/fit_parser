@@ -35,7 +35,9 @@ class Field {
           ActivityFile().messages[messageTypeName] ??
           GarminActivityFile().messages[messageTypeName];
 
-      messageTypeFields = fileTypeFields[fieldDefinitionNumber];
+      if (fileTypeFields != null) {
+        messageTypeFields = fileTypeFields[fieldDefinitionNumber];
+      }
       if (messageTypeFields != null) {
         fieldName = messageTypeFields['field_name'];
         fieldType = messageTypeFields['field_type'];
